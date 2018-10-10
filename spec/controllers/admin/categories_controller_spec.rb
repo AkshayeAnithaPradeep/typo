@@ -63,4 +63,11 @@ describe Admin::CategoriesController do
     assert_raise(ActiveRecord::RecordNotFound) { Category.find(test_id) }
   end
   
+  describe "test_new_or_edit" do
+    it 'should render categories page' do
+      get :index, :action => "new"
+      assert_template 'categories'
+    end
+  end
+  
 end
