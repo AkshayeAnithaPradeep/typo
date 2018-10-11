@@ -9,7 +9,6 @@ class Admin::CategoriesController < Admin::BaseController
       format.html { new_or_edit }
       format.js { 
        @category = Category.new
-       puts("Here I amx")
       }
     end
   end

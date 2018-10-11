@@ -11,3 +11,14 @@ Feature: Add Categories
     Given I am on the admin dashboard page
     When I follow "Categories"
     Then I should be on the new categories page
+  
+  Scenario: Add categories
+    Given I am on the new categories page
+    When I fill in "category_name" with "Foobar"
+    And I fill in "category_description" with "Lorem Ipsum"
+    And I press "Save"
+    Then I should be on the new categories page
+    When I follow "Dashboard"
+    And I follow "Categories"
+    Then I should see "Foobar"
+    And I should see "Lorem Ipsum"
